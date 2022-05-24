@@ -1,8 +1,8 @@
 const axios = require('axios');
 
-run();
+srtUpdateCaptainsInterval();
 
-async function run(){ 
+async function srtUpdateCaptainsInterval(){ 
     try{
         const response = await axios.get("https://stream-raiders-tips.vercel.app/api/updateCurrentRaids");
         console.log(response.data, new Date());
@@ -10,5 +10,5 @@ async function run(){
         console.log(error);
         console.log('Received the above error on this attempt')
     }
-    setTimeout( async ()=>{ await run() }, 17000)
+    setTimeout( async ()=>{ await srtUpdateCaptainsInterval() }, 17000)
 }
